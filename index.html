@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Contact Example</title>
+
+    <!-- TODO: Download these libraries and use them locally -->
+    <link rel="stylesheet" href="http://code.jquery.com/mobile/1.3.1/jquery.mobile-1.3.1.min.css" />
+    <script src="http://code.jquery.com/jquery-1.9.1.min.js"></script>
+    <script src="http://code.jquery.com/mobile/1.3.1/jquery.mobile-1.3.1.min.js"></script>
+    <script src="js/main.js"></script>
+
+    <!-- NOTES
+    show login form
+    on submit, get auth token
+    window open django site form with auth_token  <-- formulario con jquery mobile
+    -->
+
+
+  </head>
+  <body>
+    <h1>Login</h1>
+    <form id="login" action="domain.com/login" method="POST">
+      <label for="username">Username</label>
+      <input type="text" id="username" name="username"/>
+      <label for="username">Password</label>
+      <input type="password" id="username" name="username"/>
+      <input type="submit" value="Enviar"/>
+    </form>
+  </body>
+</html>
