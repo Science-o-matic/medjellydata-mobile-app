@@ -2,7 +2,7 @@ $(document).ready(function () {
 
   $("form#login").submit(function (e) {
     var that = this;
-    e..preventDefault();
+    e.preventDefault();
     console.log(this);
 
     $.ajax({
