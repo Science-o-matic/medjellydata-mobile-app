@@ -8,6 +8,8 @@ $(document).ready(function () {
     $.ajax({
       type: "POST",
       url: $(that).attr("action"),
+      data: $(that).serialize(),
+      datatype: "json",
       success: function(data) {
         window.open(data.url);
       },
