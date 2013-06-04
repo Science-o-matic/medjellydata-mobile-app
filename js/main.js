@@ -10,15 +10,24 @@ $(document).ready(function () {
       url: $(that).attr("action"),
       data: $(that).serialize(),
       datatype: "json",
+      async: false,
       success: function(data) {
-        var token = $(that).find("token");
-        var user = $(that).find("user");
+        alert("success");
+        var token = data.token;
+        var user = data.user;
+        var success = data.success;
       },
       error: function () {
         alert("Nombre de usuario y/o contraseña incorrectos.");
       }
     });
-    return false;
+
+    if(success){
+      window.open('http://google.com');
+    }
+    else{
+      return false;
+    }
   });
 
 });
