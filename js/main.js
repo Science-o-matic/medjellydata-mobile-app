@@ -10,24 +10,17 @@ $(document).ready(function () {
       url: $(that).attr("action"),
       data: $(that).serialize(),
       datatype: "json",
-      async: false,
       success: function(data) {
         alert("success");
         var token = data.token;
         var user = data.user;
-        var success = data.success;
+        window.open('http://www.google.com');
       },
       error: function () {
         alert("Nombre de usuario y/o contraseña incorrectos.");
       }
     });
-
-    if(success){
-      window.open('http://google.com');
-    }
-    else{
-      return false;
-    }
+    return false;
   });
 
 });
