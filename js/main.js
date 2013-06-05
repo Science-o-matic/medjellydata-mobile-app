@@ -11,10 +11,9 @@ $(document).ready(function () {
       data: $(that).serialize(),
       datatype: "json",
       success: function(data) {
-        alert("success");
         var token = data.token;
         var user = data.user;
-        window.open('http://www.google.com');
+        window.open("http://test.backend.medjellydata.com/sights/new?user=" + user + "&token=" + token, '_self', false);
       },
       error: function () {
         alert("Nombre de usuario y/o contraseña incorrectos.");
