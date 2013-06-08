@@ -3,29 +3,22 @@
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
 
-    <title>Acceso</title>
+    <title>Entrada manual de ades</title>
 
     <link rel="stylesheet" href="css/jquery.mobile-1.3.1.min.css" />
     <script src="js/jquery-1.9.1.min.js"></script>
     <script src="js/jquery.mobile-1.3.1.min.js"></script>
     <script src="js/main.js"></script>
 
-    <!-- NOTES
-    show login form
-    on submit, get auth token
-    window open django site form with auth_token  <- formulario con jquery mobile
-    -->
-
-
   </head>
   <body>
-    <h1>Login</h1>
+    <h1>Accés</h1>
     <form id="login" action="http://test.backend.medjellydata.com/token/new.json" method="POST" Content-type="multipart/form-data">
-      <label for="username">Nombre de Usuario</label>
+      <label for="username">Codi usuari:</label>
       <input type="text" id="username" name="username"/>
-      <label for="username">Contraseña</label>
+      <label for="username">Paraula de pas:</label>
       <input type="password" id="password" name="password"/>
-      <input type="submit" value="Enviar"/>
+      <input type="submit" value="Entrar"/>
     </form>
   </body>
 </html>
