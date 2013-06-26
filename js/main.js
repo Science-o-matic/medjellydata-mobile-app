@@ -79,6 +79,8 @@ function fillPassword(){
 }
 
 function goToNewSightForm(form){
+
+  var that = form;
   
   if(typeof(Storage)!=="undefined"){
     var saved_token = getToken();
@@ -100,7 +102,7 @@ function goToNewSightForm(form){
         $.ajax({
           type: "POST",
           url: "http://test.backend.medjellydata.com/token/new.json",
-          data: form.serialize(),
+          data: $(that).serialize(),
           datatype: "json",
           success: function(data){
             var result = data.success;
@@ -108,7 +110,6 @@ function goToNewSightForm(form){
               var new_token = data.token;
               var new_userid = data.user;
               saveTokenInfo(new_token, new_userid);
-              saveLoginInfo(form_user, form_password);
             }
             else{
               alert("Nom d'usuari i/o contrasenya incorrectes");
