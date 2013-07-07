@@ -1,0 +1,65 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<!--
+#
+# Licensed to the Apache Software Foundation (ASF) under one
+# or more contributor license agreements.  See the NOTICE file
+# distributed with this work for additional information
+# regarding copyright ownership.  The ASF licenses this file
+# to you under the Apache License, Version 2.0 (the
+# "License"); you may not use this file except in compliance
+# with the License.  You may obtain a copy of the License at
+# 
+# http://www.apache.org/licenses/LICENSE-2.0
+# 
+# Unless required by applicable law or agreed to in writing,
+# software distributed under the License is distributed on an
+# "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
+#  KIND, either express or implied.  See the License for the
+# specific language governing permissions and limitations
+# under the License.
+#
+-->
+<widget>
+    <preference value='false' name='AllowInlineMediaPlayback'/>
+    <preference value='true' name='AutoHideSplashScreen'/>
+    <preference value='cloud' name='BackupWebStorage'/>
+    <preference value='false' name='DisallowOverscroll'/>
+    <preference value='false' name='EnableLocation'/>
+    <!-- DEPRECATED -->
+    <preference value='false' name='EnableViewportScale'/>
+    <preference value='true' name='FadeSplashScreen'/>
+    <preference value='.25' name='FadeSplashScreenDuration'/>
+    <preference value='false' name='HideKeyboardFormAccessoryBar'/>
+    <preference value='true' name='KeyboardDisplayRequiresUserAction'/>
+    <preference value='false' name='KeyboardShrinksView'/>
+    <preference value='false' name='MediaPlaybackRequiresUserAction'/>
+    <preference value='true' name='ShowSplashScreenSpinner'/>
+    <preference value='false' name='SuppressesIncrementalRendering'/>
+    <preference value='gray' name='TopActivityIndicator'/>
+    <content src='index.html'/>
+    <plugins>
+        <plugin value='CDVDevice' name='Device'/>
+        <plugin value='CDVLogger' name='Logger'/>
+        <plugin value='CDVLocation' name='Compass'/>
+        <plugin value='CDVAccelerometer' name='Accelerometer'/>
+        <plugin value='CDVCamera' name='Camera'/>
+        <plugin value='CDVConnection' name='NetworkStatus'/>
+        <plugin value='CDVContacts' name='Contacts'/>
+        <plugin value='CDVEcho' name='Echo'/>
+        <plugin value='CDVFile' name='File'/>
+        <plugin value='CDVFileTransfer' name='FileTransfer'/>
+        <plugin value='CDVLocation' name='Geolocation'/>
+        <plugin value='CDVNotification' name='Notification'/>
+        <plugin value='CDVSound' name='Media'/>
+        <plugin value='CDVCapture' name='Capture'/>
+        <plugin value='CDVSplashScreen' name='SplashScreen'/>
+        <plugin value='CDVBattery' name='Battery'/>
+        <plugin value='CDVGlobalization' name='Globalization'/>
+        <plugin value='CDVInAppBrowser' name='InAppBrowser'/>
+      </plugins>
+      <!-- Define app icon for each platform. -->
+      <icon src="icon.png" />
+      <icon src="icon-57.png" gap:platform="ios" width="57" height="57"/>
+      <icon src="icon-72.png" gap:platform="ios" width="72" height="72"/>
+    <access origin='*'/>
+</widget>
