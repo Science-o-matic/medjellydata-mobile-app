@@ -79,9 +79,8 @@ function fillPassword(){
 }
 
 function goToNewSightForm(form){
-
   var that = form;
-  
+
   if(typeof(Storage)!=="undefined"){
     var saved_token = getToken();
     var saved_userid = getUserId();
@@ -127,13 +126,31 @@ function goToNewSightForm(form){
   });
 }
 
+
+function toggleSubmitButton() {
+  var span_button = $('span.ui-btn-inner'),
+    submit_button = $('input[type=submit]'),
+    span_text = $(".ui-btn-text");
+
+  if (submit_button.attr('disabled')) {
+    submit_button.removeAttr('disabled');
+    span_button.removeClass('ui-disabled');
+    span_text.text(this.text);
+  } else {
+    this.text = span_text.text();
+    submit_button.attr('disabled', 'disabled');
+    span_button.addClass('ui-disabled');
+    span_text.text("Enviando...");
+  }
+}
+
+
 $(document).ready(function(){
 
-  fillFormOnLoad();
-
   $("form#login").submit(function (e) {
-    
     var that = this;
+
+    toggleSubmitButton();
     e.preventDefault();
 
     var form_user = $("#username").val();
@@ -156,10 +173,12 @@ $(document).ready(function(){
           }
           else{
             alert("Nom d'usuari i/o contrasenya incorrectes");
+            toggleSubmitButton();
           }
         },
         error: function(){
           alert("Problema de connexió, si us plau, comprovi la seva connexió a Internet");
+          toggleSubmitButton();
         }
       });
     }
