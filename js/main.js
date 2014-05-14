@@ -1,3 +1,6 @@
+var api_base_url = 'http://backoffice.medjellydata.com';
+
+
 function saveTokenInfo(token, userid){
   if(typeof(Storage)!=="undefined"){
     localStorage.token = token;
@@ -90,17 +93,17 @@ function goToNewSightForm(form){
   }
 
   $.ajax({
-    url: "http://test.backend.medjellydata.com/token/" + saved_token + "/" + saved_userid + ".json",
+    url: api_base_url + "/token/" + saved_token + "/" + saved_userid + ".json",
     datatype: "json",
     success: function(data){
       var result = data.success;
       if(result == true){
-        window.open("http://test.backend.medjellydata.com/sights/new?user=" + saved_userid + "&token=" + saved_token, '_self', false);
+        window.open(api_base_url + "/sights/new?user=" + saved_userid + "&token=" + saved_token, '_self', false);
       }
       else{
         $.ajax({
           type: "POST",
-          url: "http://test.backend.medjellydata.com/token/new.json",
+          url: api_base_url + "/token/new.json",
           data: $(that).serialize(),
           datatype: "json",
           success: function(data){
@@ -147,6 +150,8 @@ function toggleSubmitButton() {
 
 $(document).ready(function(){
 
+  fillFormOnLoad()
+
   $("form#login").submit(function (e) {
     var that = this;
 
@@ -159,7 +164,7 @@ $(document).ready(function(){
     if((form_user != getUsername()) || (form_password != getPassword())){
       $.ajax({
         type: "POST",
-        url: "http://test.backend.medjellydata.com/token/new.json",
+        url: api_base_url + "/token/new.json",
         data: $(that).serialize(),
         datatype: "json",
         success: function(data){
